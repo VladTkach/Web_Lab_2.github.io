@@ -6,11 +6,11 @@ body {
     font-size: 14px;
 }
 
-*, *:after , *:before {
+*, *:after, *:before {
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
@@ -21,19 +21,27 @@ h1, h2, h3, h4, h5, h6{
 
 header {
     background-color: #000;
-    display: flex;
-    justify-content: space-between;
     padding: 30px 40px;
+    display: grid;
+    grid-template-columns: [left] 20%  [midle] 65% [right] 15%;
+    grid-template-rows: [main]100%;
 
 }
 
-.header__title{
+.header__title {
+    grid-column-start: 1;
     color: #fff;
     text-align: left;
+
 }
 
 /*Navigation 
 ===================== */
+
+.nav {
+    grid-column: 3;
+    grid-row: 1;
+}
 
 .nav__link {
     text-decoration: none;
@@ -41,7 +49,6 @@ header {
     font-size: 20px;
     color: #fff;
     transition: color .2s linear;
-
     margin-right: 40px;
 
 }
@@ -60,7 +67,9 @@ header {
 main {
     min-height: 100%;
     height: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: [left] 20%  [midle] 60% [right] 20%;
+    grid-template-rows: [main]100%;
 }
 
 /* Aside
@@ -68,7 +77,6 @@ main {
 
 aside {
     height: auto;
-    width: 20%;
     background-color: gray;
     padding-top: 20px;
 
@@ -89,6 +97,11 @@ aside {
 
 /*}*/
 
+.left__aside {
+    grid-column: 1;
+    grid-row: 1;
+}
+
 .list__item {
     font-size: 17px;
     font-weight: 500;
@@ -97,13 +110,14 @@ aside {
 }
 
 .right__aside {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    grid-column: 3;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: 1fr;
 }
 
 .right__aside__info {
-
+    grid-row: end;
     text-align: center;
     font-size: 16px;
     font-weight: 700;
@@ -115,20 +129,19 @@ aside {
 }
 
 .right__aside__images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     height: auto;
 }
 
 .right__aside__item {
+    display: block;
     width: 60%;
+    margin: 30px auto;
     height: auto;
-    margin: 15px;
 }
 
 .content {
-    width: 60%;
+    grid-column: 2;
+    grid-row: 1;
 }
 
 .main__title {
@@ -158,18 +171,22 @@ aside {
 footer {
     width: 100%;
     background-color: #000000;
-    display: flex;
-    justify-content: space-between;
-
     padding: 30px 40px;
+    display: grid;
+    grid-template-columns: [left] 20%  [midle] 65% [right] 15%;
+    grid-template-rows: [main]100%;
 }
 
 
 .footer__title {
     color: #ffffff;
+    grid-column: 3;
+    grid-row: 1;
+    text-align: right;
 }
 
 .footer__content {
     color: #ffffff;
+
 }
 
